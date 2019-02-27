@@ -31,14 +31,16 @@ public class Elevator {
     public void goUp(){
         if(this.andarAtual == 40) System.err.println("Você já está no último andar!");
         else ++this.andarAtual;
+        System.out.println("Subiu para o andar: " + this.andarAtual);
     }
     public void goDown(){
        if(this.andarAtual == 0) System.err.println("Não é possível ir mais para baixo");
        else --this.andarAtual;
+        System.out.println("Desceu para o andar: " + this.andarAtual);
     }
     public void goUtil(int x){
         
-        if(x > 40 || x < 0){
+        if(!(x > 40 || x < 0)){
             if(this.andarAtual > x){
                 while(this.andarAtual != x){
                     this.goDown();
@@ -54,5 +56,7 @@ public class Elevator {
             System.out.println("Andar não existe!");
         }
     }
-    
+    public int getAndarAtual(){
+        return this.andarAtual;
+    }
 }
